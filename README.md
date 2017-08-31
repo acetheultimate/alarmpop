@@ -23,7 +23,7 @@ libraries!
     * `~$ ./alarmPop.py 20:05 -m "Hello World!" -s`  
     Type the script name followed by time, and message after positional argument `-m` and ending with another positional argument `-s` to set speak flag as `True`
 6. To delete alarm/reminder:
-    * `~$ ./alarmPop.py -e`
+    * `~$ ./alarmPop.py -e`  
     It will list all set alarms and will interactively ask to delete alarm by index. 
 7. To auto start the script at startup, follow the steps below,
     * Open `Startup Application Preferences` on Ubuntu.  
