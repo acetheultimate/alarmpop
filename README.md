@@ -5,7 +5,7 @@ libraries!
 
 ### Dependencies ###
 
-* Python
+* Python2 or Python3(if you can fix shelve gdbm error)
 * mpg321
 * notify-osd (Normally pre-installed on Ubuntu)
 * gTTS (Google Text to Speech API) for Python. (optional, if you want to your message to be spoken out loud.)

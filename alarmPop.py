@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 import sys
 import os
 import shelve
@@ -8,10 +9,10 @@ from time import sleep
 from subprocess import call
 from datetime import timedelta
 from datetime import datetime as dt
-from __future__ import print_function
 SCRIPT_PATH = os.path.abspath(os.path.dirname(sys.argv[0]))
 alarms = shelve.open(SCRIPT_PATH + "/" + "alarms.dat")
 print("Started @ ", str(dt.now()))
+
 
 def run():
     print(alarms.keys())
@@ -146,4 +147,4 @@ except KeyboardInterrupt:
 finally:
     print("Closing the file...")
     alarms.close()
-    print("Closed @", str(dt.now())
+    print("Closed @", str(dt.now()))
