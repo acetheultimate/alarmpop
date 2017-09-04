@@ -19,7 +19,7 @@ def run():
     if len(alarms.keys()):
         alarms_list = sorted(alarms)
         while len(alarms_list):
-            if str(dt.now()) >= alarms_list[0]:
+            if str(dt.now()).replace(" ","-") >= alarms_list[0]:
                 if alarms[alarms_list[0]] is not None:
                     call(["notify-send",
                           "-i",
@@ -52,9 +52,9 @@ def run():
                 print("Deleted", alarms.keys())
             else:
                 print("No alarms for another " +
-                      str(dt.strptime(alarms_list[0], "%Y-%m-%d %H:%M:%S") - dt.now()) + "(hh:mm:ss.ms)")
+                      str(dt.strptime(alarms_list[0], "%Y-%m-%d-%H:%M:%S") - dt.now()) + "(hh:mm:ss.ms)")
                 print("Taking a nap")
-                sleep((dt.strptime(alarms_list[0], "%Y-%m-%d %H:%M:%S") - dt.now()).total_seconds())
+                sleep((dt.strptime(alarms_list[0], "%Y-%m-%d-%H:%M:%S") - dt.now()).total_seconds())
             alarms_list = sorted(alarms)
     else:
         print("No alarm is set yet. Exiting Program!")
@@ -63,7 +63,7 @@ def run():
 
 def set_alarm(time, msg=None, speak=False):
     print("Got args as", time, msg, speak)
-    time = str(time)
+    time = str(time).replace(" ","-")
     alarms[time] = msg
     if speak and msg:
         try:
